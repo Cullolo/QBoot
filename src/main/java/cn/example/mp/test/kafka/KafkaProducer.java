@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @Author: xianpei.qin
  * @Date: 2020/5/13 14:06
  **/
-//@Component
+@Component
 public class KafkaProducer {
     private static Logger logger = LoggerFactory.getLogger(KafkaProducer.class);
 

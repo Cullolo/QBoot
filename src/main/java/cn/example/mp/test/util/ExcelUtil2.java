@@ -35,8 +35,10 @@ public class ExcelUtil2 {
         try {
             outputStream = new ByteArrayOutputStream();
             xssfWb = new XSSFWorkbook();
-            sxssfWorkbook = new SXSSFWorkbook(xssfWb, 1000);//默认读取1000行
-            sxssSheet = (SXSSFSheet) sxssfWorkbook.createSheet("Sheet1");//分页名称
+            //默认读取1000行
+            sxssfWorkbook = new SXSSFWorkbook(xssfWb, 1000);
+            //分页名称
+            sxssSheet = (SXSSFSheet) sxssfWorkbook.createSheet("Sheet1");
 
             //列头样式
             XSSFFont columnTitleFont = (XSSFFont) sxssfWorkbook.createFont();

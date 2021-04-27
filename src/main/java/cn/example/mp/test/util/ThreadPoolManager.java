@@ -1,5 +1,7 @@
 package cn.example.mp.test.util;
 
+import org.apache.poi.ss.formula.functions.T;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.*;
@@ -9,6 +11,7 @@ import java.util.concurrent.*;
  * @author lik
  * Date 2019/7/19 16:36
  */
+
 public class ThreadPoolManager {
     private static ThreadPoolManager threadPoolManager=new ThreadPoolManager();
     /**
@@ -121,6 +124,24 @@ public class ThreadPoolManager {
         if (task != null) {
             mThreadPool.execute(task);
         }
+    }
+
+    /**
+     * 向线程池中添加任务方法，
+     * 可获取返线程执行的返回值
+     * @param task
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
+    public String addExecuteTask(FutureTask<String> task) throws ExecutionException, InterruptedException {
+
+        String result = "";
+        if (task != null) {
+            mThreadPool.execute(task);
+             result = task.get();
+        }
+        return result;
     }
 
     protected boolean isTaskEnd() {

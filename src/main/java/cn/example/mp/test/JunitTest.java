@@ -605,4 +605,12 @@ public class JunitTest {
 
     }
 
+    @Test
+    public void testTData(){
+        String dateStr = "2021-03-02 06-02-29";
+        Date date = DateUtil.parseSimpleDate(dateStr);
+        System.out.println(date);
+
+    }
+
 }

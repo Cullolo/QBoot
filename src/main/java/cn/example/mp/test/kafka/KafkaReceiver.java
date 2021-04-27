@@ -13,7 +13,7 @@ import java.util.Optional;
  * @Author: xianpei.qin
  * @Date: 2020/5/13 14:18
  **/
-//@Component
+@Component
 public class KafkaReceiver {
 
 
